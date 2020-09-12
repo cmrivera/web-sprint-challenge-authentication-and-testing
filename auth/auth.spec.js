@@ -2,6 +2,7 @@ const request = require("supertest");
 
 const server = require("../api/server");
 
+//get request test to pull api from server
 describe("GET /", function () {
   it("should return a response", function () {
     return request(server)
@@ -12,6 +13,7 @@ describe("GET /", function () {
   });
 });
 
+//post request test
 describe("POST /register", () => {
   it("should register new user", () => {
     return request(server)
@@ -32,6 +34,8 @@ describe("POST /register", () => {
       });
   });
 });
+
+//pot request login test
 
 describe("POST /login", () => {
   it("should allow user to login successfully", () => {

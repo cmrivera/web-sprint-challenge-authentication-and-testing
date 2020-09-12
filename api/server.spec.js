@@ -3,6 +3,7 @@ const test = require("supertest");
 const server = require("./server.js");
 const db = require("../database/dbConfig.js");
 
+//test server for posting registration for success and fail
 describe("server", function () {
   beforeEach(async () => {
     await db("users").truncate();
@@ -30,6 +31,8 @@ describe("server", function () {
         });
     });
   });
+
+  //test for post login in request  for success or failure
   describe("post /login", function () {
     it("should return a fail message", function () {
       return test(server)
@@ -56,6 +59,8 @@ describe("server", function () {
         });
     });
   });
+
+  //test for get request to pull jokes
   describe("get jokes", function () {
     describe("should return invalid credentials message", function () {
       return test(server)

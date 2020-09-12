@@ -17,7 +17,7 @@ server.use("/api/jokes", authenticate, jokesRouter);
 
 server.get("/", (req, res) => {
   res.json({
-    message: "Hey Alexis",
+    message: "Hey Chris",
   });
 });
 
